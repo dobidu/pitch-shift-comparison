@@ -1,0 +1,199 @@
+# Comparação Aprimorada de Bibliotecas de Pitch Shifting e Autotune
+# Requirements.txt - Dependências do Projeto
+# Versão: 2.0.0
+# Data: Dezembro 2024
+
+# ===================================================================
+# DEPENDÊNCIAS PRINCIPAIS (OBRIGATÓRIAS)
+# ===================================================================
+
+# Computação científica
+numpy>=1.21.0,<1.27.0           # Operações numéricas fundamentais
+scipy>=1.9.0,<1.12.0            # Processamento de sinais, filtros, interpolação
+
+# Visualização e análise de dados
+matplotlib>=3.5.0,<4.0.0        # Gráficos e visualizações
+seaborn>=0.11.0,<0.13.0         # Visualizações estatísticas avançadas
+pandas>=1.5.0,<2.1.0            # Análise e manipulação de dados
+
+# I/O de arquivos de áudio
+soundfile>=0.12.1,<0.13.0       # I/O de arquivos de áudio (WAV, FLAC, OGG)
+
+# Monitoramento de sistema
+psutil>=5.9.0,<6.0.0            # Monitoramento de CPU e memória
+
+# Interface de usuário
+tqdm>=4.64.0,<5.0.0             # Barras de progresso para operações longas
+
+# ===================================================================
+# BIBLIOTECAS DE PITCH SHIFTING (OPCIONAIS)
+# ===================================================================
+
+# LibROSA - Análise e processamento de áudio
+librosa>=0.10.0,<0.11.0         # Biblioteca principal para análise de áudio
+resampy>=0.4.0,<0.5.0           # Dependência do LibROSA para resampling
+
+# PyDub - Manipulação básica de áudio
+pydub>=0.25.0                   # Manipulação simples de áudio
+
+# Parselmouth - Interface Python para Praat
+praat-parselmouth>=0.4.0        # Algoritmos de análise de fala do Praat
+
+# pedalboard - Efeitos de áudio do Spotify
+pedalboard>=0.7.0               # Efeitos de áudio profissionais
+
+# pyrubberband - Wrapper para Rubber Band
+pyrubberband>=0.3.0             # Wrapper Python para rubberband-cli
+# NOTA: Requer rubberband-cli instalado separadamente:
+# Ubuntu/Debian: sudo apt-get install rubberband-cli
+# macOS: brew install rubberband
+# Windows: https://breakfastquay.com/rubberband/
+
+# ===================================================================
+# BIBLIOTECAS REMOVIDAS (PROBLEMAS DE COMPATIBILIDADE)
+# ===================================================================
+
+# TimeSide - Removido devido a dependências muito complexas
+# timeside>=0.9.0               # Framework de análise de áudio
+
+# aubio - Removido devido a problemas de build/compatibilidade
+# aubio>=0.4.9                  # Detecção de pitch e análise musical
+
+# Essentia - Removido devido a problemas de build
+# essentia>=2.1b6.dev858        # Algoritmos de MIR
+
+# ===================================================================
+# DEPENDÊNCIAS DE DESENVOLVIMENTO (OPCIONAIS)
+# ===================================================================
+
+# Testes
+pytest>=7.0.0,<8.0.0           # Framework de testes
+pytest-cov>=4.0.0,<5.0.0       # Cobertura de testes
+pytest-benchmark>=4.0.0        # Benchmarking de performance
+
+# Formatação e linting de código
+black>=22.0.0,<24.0.0          # Formatação automática de código Python
+flake8>=5.0.0,<7.0.0           # Linting e verificação de estilo
+mypy>=0.991,<1.8.0             # Verificação de tipos estáticos
+isort>=5.0.0,<6.0.0            # Organização de imports
+
+# Profiling e debugging
+line-profiler>=4.0.0           # Profiling linha por linha
+memory-profiler>=0.60.0        # Profiling de memória
+py-spy>=0.3.0                  # Profiler em tempo real
+
+# Documentação
+sphinx>=5.0.0,<8.0.0           # Geração de documentação
+sphinx-rtd-theme>=1.0.0,<2.0.0 # Tema para documentação
+myst-parser>=0.18.0            # Parser Markdown para Sphinx
+
+# Jupyter (para notebooks de análise)
+jupyter>=1.0.0                 # Ambiente Jupyter
+ipywidgets>=8.0.0              # Widgets interativos
+
+# ===================================================================
+# DEPENDÊNCIAS ESPECÍFICAS POR PLATAFORMA
+# ===================================================================
+
+# Windows - Pode precisar de dependências adicionais
+# pywin32>=305; sys_platform == "win32"     # APIs Windows
+
+# macOS - Pode precisar de dependências adicionais  
+# pyobjc>=9.0; sys_platform == "darwin"     # APIs macOS
+
+# Linux - Geralmente sem dependências extras específicas
+
+# ===================================================================
+# INSTALAÇÃO POR CATEGORIA
+# ===================================================================
+
+# Para instalar apenas dependências básicas:
+# pip install numpy scipy matplotlib seaborn pandas soundfile psutil tqdm
+
+# Para instalar todas as bibliotecas de pitch shifting:
+# pip install librosa pydub praat-parselmouth pedalboard pyrubberband
+
+# Para desenvolvimento completo:
+# pip install -r requirements.txt
+# pip install pytest black flake8 mypy
+
+# Para análise avançada:
+# pip install jupyter ipywidgets sphinx
+
+# ===================================================================
+# NOTAS DE COMPATIBILIDADE
+# ===================================================================
+
+# Python: Requer Python >= 3.8
+# Sistema: Funciona em Windows, macOS, Linux
+
+# ATENÇÃO para pyrubberband:
+# - Ubuntu/Debian: sudo apt-get install rubberband-cli
+# - macOS: brew install rubberband  
+# - Windows: Baixar de https://breakfastquay.com/rubberband/
+
+# Para sistemas com recursos limitados, instale apenas:
+# numpy scipy matplotlib soundfile librosa
+
+# Para máxima compatibilidade, use:
+# pip install --only-binary=all -r requirements.txt
+
+# ===================================================================
+# VERIFICAÇÃO DE INSTALAÇÃO
+# ===================================================================
+
+# Para verificar se tudo foi instalado corretamente:
+# python -c "
+# import numpy, scipy, matplotlib, soundfile, psutil, tqdm
+# print('✅ Dependências básicas OK')
+# try:
+#     import librosa, pydub, parselmouth, pedalboard, pyrubberband
+#     print('✅ Bibliotecas de pitch shifting OK') 
+# except ImportError as e:
+#     print(f'⚠️ Algumas bibliotecas de pitch shifting faltando: {e}')
+# "
+
+# ===================================================================
+# INSTALAÇÃO RECOMENDADA
+# ===================================================================
+
+# 1. Criar ambiente virtual (ALTAMENTE recomendado):
+#    python -m venv pitch_shift_env
+#    
+#    # Linux/Mac:
+#    source pitch_shift_env/bin/activate
+#    
+#    # Windows:
+#    pitch_shift_env\Scripts\activate
+
+# 2. Atualizar pip:
+#    python -m pip install --upgrade pip setuptools wheel
+
+# 3. Instalar dependências:
+#    pip install -r requirements.txt
+
+# 4. Instalar software externo (se necessário):
+#    # Para pyrubberband - ver instruções acima
+
+# 5. Verificar instalação:
+#    python pitch_shift_comparison_enhanced.py
+
+# ===================================================================
+# TROUBLESHOOTING
+# ===================================================================
+
+# Se houver erros de compilação:
+# pip install --only-binary=all numpy scipy
+# pip install --no-build-isolation librosa
+
+# Para problemas com librosa no Windows:
+# pip install librosa --no-deps
+# pip install resampy numba
+
+# Para problemas de memória:
+# export/set OMP_NUM_THREADS=1
+# export/set OPENBLAS_NUM_THREADS=1
+
+# Se pyrubberband não funcionar:
+# Verifique se rubberband-cli está no PATH:
+# rubberband --help
