@@ -417,9 +417,8 @@ Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICE
 
 ## 📞 Suporte
 
-- 🐛 **Issues**: [GitHub Issues](https://github.com/seu-usuario/pitch-shift-comparison/issues)
-- 💬 **Discussões**: [GitHub Discussions](https://github.com/seu-usuario/pitch-shift-comparison/discussions)
-- 📧 **Email**: seu-email@exemplo.com
+- 🐛 **Issues**: [GitHub Issues](https://github.com/dobidu/pitch-shift-comparison/issues)
+- 💬 **Discussões**: [GitHub Discussions](https://github.com/dobidu/pitch-shift-comparison/discussions)
 
 ## 🔗 Links Úteis
 
